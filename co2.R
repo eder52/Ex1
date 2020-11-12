@@ -1,3 +1,6 @@
+## install.packages("checkmate")
+## library(checkmate)
+
 
 
 #' Calculates Carbondioxide
@@ -9,7 +12,7 @@
 #' @param enInt
 #' @param carbInt
 #'
-#' @return number
+#' @return number returns "-1" when input is flawed
 #'
 #' @examples
 #' 6 = 1 * 2 * 3 * 1
@@ -17,9 +20,16 @@
 #' @export
 carbondioxide <- function(pop, gdp, enInt, carbInt) {
   
-  print(pop * gdp * enInt * carbInt)
-  return(pop * gdp * enInt * carbInt)
+  result = -1
+
+  if (testInt(pop, lower = 1)) {
+    result = pop * gdp * enInt * carbInt
+    print(result)}
+  
+  else {print("Population Size (first value) unrealistic")}
+  
+  return(result)
 }
 
 
-carbondioxide(1,2,3,1.2)
+carbondioxide(-1,2,3,1.2)
