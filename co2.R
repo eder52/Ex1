@@ -1,5 +1,8 @@
 ## install.packages("checkmate")
+## install.packages("testthat")
+##### install.packages("installr")
 ## library(checkmate)
+## library(testthat)
 
 
 
@@ -22,9 +25,11 @@ carbondioxide <- function(pop, gdp, enInt, carbInt) {
   
   result = -1
 
-  if (testInt(pop, lower = 1)) {
+  #if (testInt(pop, lower = 1)) {
+   if (pop >= 0) {
     result = pop * gdp * enInt * carbInt
-    print(result)}
+    print(result)
+    }
   
   else {print("Population Size (first value) unrealistic")}
   
@@ -33,3 +38,7 @@ carbondioxide <- function(pop, gdp, enInt, carbInt) {
 
 
 carbondioxide(-1,2,3,1.2)
+
+
+
+
