@@ -16,10 +16,10 @@
 #'
 #' @export
 carbondioxide <- function(pop, gdp, enInt, carbInt) {
+  
+  print(pop * gdp * enInt * carbInt)
   return(pop * gdp * enInt * carbInt)
 }
 
 
-
-
-print(carbondioxide(1,2,3,1.2))
+carbondioxide(1,2,3,1.2)
